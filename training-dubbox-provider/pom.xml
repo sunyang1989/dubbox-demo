@@ -23,27 +23,12 @@
 		<jackson-2-version>2.4.4</jackson-2-version>
 		<junit.version>4.12</junit.version>
 		<jetty.version>9.3.0.M1</jetty.version>
-		<dubbox.version>2.8.4-SNAPSHOT</dubbox.version>
+		<dubbox.version>2.8.4</dubbox.version>
 		<tomcat.version>8.0.11</tomcat.version>
 		<zkclient.verion>2.1.1</zkclient.verion>
 		<zookeeper.version>3.4.6</zookeeper.version>
-
 	</properties>
-
-	<repositories>
-		<repository>
-			<id>nexus</id>
-			<name>Nexus</name>
-			<url>http://192.168.3.224:8181/nexus/content/groups/public/</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus</id>
-			<name>Nexus</name>
-			<url>http://192.168.3.224:8181/nexus/content/groups/public/</url>
-		</pluginRepository>
-	</pluginRepositories>
+	
 	<dependencies>
 		<dependency>
 			<groupId>com.shangpin</groupId>
