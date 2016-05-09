@@ -7,6 +7,17 @@
 		
 	<dubbo:annotation package="org.training.dubbo.provider" />
 
-	<bean id="app" class="org.training.dubbo.provider.App" />
+	<dubbo:protocol name="rest" port="7777" threads="500" contextpath="services" server="tomcat" accepts="500"
+					serialization="fastjson"/>
+
+	<dubbo:protocol name="http" port="6666" server="jetty" contextpath="http"/>
+
+	<bean id="demoService" class="org.training.dubbo.provider.DemoServiceImpl" />
+
+	<bean id="userService" class="org.training.dubbo.provider.UserServiceImpl" />
+
+	<dubbo:service interface="org.training.dubbo.api.DemoService" ref="demoService" protocol="http"/>
+
+	<dubbo:service interface="org.training.dubbo.api.UserService" ref="userService"  protocol="rest"/>
 
 </beans>

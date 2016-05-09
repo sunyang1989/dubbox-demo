@@ -15,38 +15,23 @@
  */
 package org.training.dubbo.consumer;
 
-import java.io.IOException;
-
-import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.training.dubbo.api.DemoService;
+import org.training.dubbo.api.UserService;
 
 public class DemoConsumer {
 
-	@Test
-	public void test() {
-		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
-				new String[] { "classpath:/META-INF/spring/applicationContext-dubbo.xml" });
-		ctx.start();
-		
-		System.out.println(ctx.getStartupDate());
-		DemoService demoService = ctx.getBean("demoService", DemoService.class);
-		while (true) {
-			String value = demoService.sayHello("====hello");
-			System.out.println("返回结果：" + value);
-			try {
-				Thread.sleep(5000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
+	public static void main(String[] args) {
+		ClassPathXmlApplicationContext classPathXmlApplicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+		classPathXmlApplicationContext.start();
 
-		
-//		try {
-//			System.in.read();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
+		DemoService demoService = (DemoService) classPathXmlApplicationContext.getBean("demoService");
+		String world1 = demoService.sayHello("sun");
+
+		UserService userService = (UserService) classPathXmlApplicationContext.getBean("userService");
+		String world2 = userService.get(123l).toString();
+		System.out.println("=====================================");
+		System.out.println(world1+" | "+world2);
+		System.out.println("=====================================");
 	}
 }

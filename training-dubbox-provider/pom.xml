@@ -31,6 +31,18 @@
 	
 	<dependencies>
 		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>fastjson</artifactId>
+			<version>1.2.8</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>jetty</artifactId>
+			<version>7.0.0.pre5</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.shangpin</groupId>
 			<artifactId>training-dubbox-api</artifactId>
 			<version>${project.parent.version}</version>
@@ -143,6 +155,11 @@
 		<!-- zookeeper end -->
 
 		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.0.0.GA</version>
+		</dependency>
+		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-jaxrs</artifactId>
 			<version>3.0.7.Final</version>
@@ -151,11 +168,6 @@
 			<groupId>org.jboss.resteasy</groupId>
 			<artifactId>resteasy-client</artifactId>
 			<version>3.0.7.Final</version>
-		</dependency>
-		<dependency>
-			<groupId>javax.validation</groupId>
-			<artifactId>validation-api</artifactId>
-			<version>1.0.0.GA</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.resteasy</groupId>
