@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!--<bean id="demoAction" class="org.training.dubbo.consumer.DemoAction" init-method="start">
+		<property name="demoService" ref="demoService" />
+	</bean>-->
+
+	<dubbo:reference id="demoService" interface="org.training.dubbo.api.DemoService" />
+
+	<dubbo:reference id="userService" interface="org.training.dubbo.api.UserService" />
+</beans>
